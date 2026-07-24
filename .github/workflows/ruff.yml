@@ -1,0 +1,24 @@
+name: Ruff CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Ruff Check
+        uses: astral-sh/ruff-action@v4.1.0
+        with:
+          args: "check ."
+
+      - name: Run Ruff Format
+        uses: astral-sh/ruff-action@v4.1.0
+        with:
+          args: "format --check ."
