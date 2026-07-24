@@ -2,9 +2,9 @@ name: Ruff CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "pull-request-task" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "pull-request-task" ]
 
 jobs:
   lint:
